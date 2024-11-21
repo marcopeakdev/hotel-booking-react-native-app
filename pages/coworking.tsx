@@ -76,25 +76,7 @@ export default function Coworking({ data }) {
               </button>
             </div>
           </div>
-          <div className={styles.resourceContent}>
-            {data.map((item) => (
-              <ResourceCard
-                key={item.UniqueId}
-                itemId={item.UniqueId}
-                title={item.Name}
-                description={stripeHTML(item.Description)}
-                image={
-                  <Image
-                    src={item.image ?? ResourceDefaultBg}
-                    alt="People laughing"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="top"
-                  />
-                }
-              />
-            ))}
-          </div>
+          
         </div>
       </div>
       <Footer className={styles.footer} />
