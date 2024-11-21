@@ -1,0 +1,51 @@
+@import "variables";
+
+.card {
+  border-radius: 10px;
+  width: 303px;
+  min-width: 303px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media (min-width: $screen-medium) {
+    width: 420px;
+    min-width: 420px;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 187.12px;
+
+    @media (min-width: $screen-medium) {
+      height: 250px;
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 14.22px;
+      line-height: 12.21px;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  .description {
+    text-align: left;
+    padding-bottom: 2rem;
+    font-size: 14.22px;
+    line-height: 12.19px;
+  }
+}

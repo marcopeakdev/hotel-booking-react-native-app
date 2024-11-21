@@ -1,0 +1,8 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.wrapper {
+  p {
+    color: $m-black;
+  }
+}

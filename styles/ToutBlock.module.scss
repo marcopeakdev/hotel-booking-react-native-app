@@ -1,0 +1,64 @@
+@import "variables";
+
+.container {
+  position: relative;
+  display: grid;
+  background: $m-light-gray;
+  color: $m-medium-gray;
+  
+  @media (min-width: $screen-large) {
+    padding: 5vw 0 6vw 45vw;
+  }
+
+  @media (min-width: $screen-medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.image-wrapper {
+  justify-self: center;
+  margin-top: -20%;
+  width: 75vw;
+
+  @media (min-width: $screen-medium) {
+    width: auto;
+  }
+
+  @media (min-width: 1024px) {
+    left: calc(5rem + 1%);
+    top: calc(-3rem - 1%);
+  }
+
+  @media (min-width: $screen-large) {
+    position: absolute;
+    left: calc(3rem + 1%);
+    top: calc(-3rem - 1%);
+    margin-top: 0;
+  }
+}
+
+.right-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+
+  @media (min-width: $screen-medium) {
+    align-items: flex-start;
+  }
+
+  h1, p {
+    width: 75%;
+    text-align: center;
+    margin-bottom: 0;
+
+    @media (min-width: $screen-medium) {
+      width: 45vw;
+      text-align: left;
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}

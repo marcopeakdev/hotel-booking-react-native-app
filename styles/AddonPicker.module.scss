@@ -1,0 +1,53 @@
+@import "variables";
+
+.addonpicker {
+  position: relative;
+  color: #202020;
+  overflow-x: auto;
+
+  .pickerContent {
+    display: flex;
+    flex-direction: row;
+
+    .itemContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 101px;
+      min-width: 101px;
+
+      .plusButton {
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        cursor: pointer;
+        width: 29px;
+        height: 29px;
+        transition: all 0.1s;
+      }
+
+      .selected {
+        transform: rotate(45deg);
+      }
+
+      p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      .titleStyle {
+        font-weight: 400;
+        font-size: 14.22px;
+        line-height: 12px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .priceStyle {
+        font-weight: 400;
+        font-size: 14.22px;
+        line-height: 21px;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  position: relative;
+  padding-top: 3.125rem;
+  padding-bottom: 6rem;
+
+  @media (min-width: $screen-medium) {
+    align-items: center;
+    justify-content: center;
+    height: 31.44rem;
+  }
+
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+    text-align: left;
+
+    @media (min-width: $screen-medium) {
+      width: 42rem;
+      font-size: 48px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 0rem;
+    text-align: left;
+
+    @media (min-width: $screen-medium) {
+      width: 30rem;
+      font-size: 16px;
+    }
+  }
+
+  .logoBg {
+    width: 21.75rem;
+    height: 21.75rem;
+    display: block;
+    position: absolute;
+    right: -174px;
+    z-index: -1;
+
+    @media (min-width: $screen-large) {
+      display: none;
+    }
+  }
+
+  .addedContent {
+    display: block;
+
+    @media (min-width: $screen-medium) {
+      display: none;
+    }
+  }
+
+  .rightImageContainer {
+    position: absolute;
+    bottom: -202px;
+    right: 0px;
+    width: 46.688rem;
+    height: 75.563rem;
+    max-width: 50vw;
+    display: none;
+
+    @media (min-width: $screen-large) {
+      display: block;
+    }
+
+    button {
+      @include purple-button;
+      margin-top: 0.5rem;
+
+      @media (min-width: $screen-medium) {
+        grid-row: 3;
+        grid-column: 2;
+        padding: 0;
+        margin-left: 1rem;
+        margin-top: 0;
+      }
+    }
+  }
+}

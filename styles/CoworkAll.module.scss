@@ -1,0 +1,159 @@
+@import "variables";
+@import "mixins";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  margin-top: -1rem;
+  grid-row: row-start;
+  grid-column: 1;
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+
+  nav {
+    margin-top: 0px;
+    padding-top: 1rem;
+    background: none;
+
+    a img[alt="4m Logo"]{
+      width: 217px !important;
+      height: 50px !important;
+      min-height: auto !important;
+    }
+  }
+
+  a,
+  button {
+    color: black;
+  }
+
+  svg,
+  path {
+    fill: black!important;
+  }
+
+  span {
+    border-color: black;
+  }
+  
+  @media (min-width: $screen-medium) {
+    margin-top: -1rem;
+    grid-column: col-start / span 12;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  height: 356px;
+  grid-row: row-start / span 3;
+  grid-column: 1;
+  padding-bottom: 1rem;
+
+  @media (min-width: $screen-medium) {
+    height: 1080px;
+    grid-column: col-start / span 12;
+    padding-bottom: 10rem;
+  }
+
+  h1, p {
+    width: 90vw;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+    @media (min-width: $screen-medium) {
+      width: 42rem;
+    }
+  }
+
+  p {
+    margin-top: 0rem;
+    @media (min-width: $screen-medium) {
+      width: 30rem;
+    }
+  }
+
+  a {
+    @include white-button;
+    padding: 1rem 3.5rem;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.container{
+  margin-top: 6rem;
+}
+
+.borderContainer{
+  height: 4px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(90.01deg, #E48600 5.66%, #01AF8F 34.17%, #4D8FFB 71.54%, #9E81D2 100.05%);
+}
+
+.headerContainer{
+  background-color: white;
+  grid-column: col-start/span 12;
+  padding-bottom: 10px;
+}
+
+.cardsRow{
+  flex-direction: row;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  justify-content: flex-start;
+  overflow-x: auto;
+
+  @media (min-width: $screen-medium) {
+    justify-content: center;
+  }
+}
+
+.resourceContainer{
+  background-color: white;
+  grid-column: col-start/span 12;
+  padding-bottom: 6rem;
+
+  .resourceContent{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.footer {
+  padding-top: 10vw;
+  grid-row: row-start 9;
+  grid-column: 1;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+    padding-top: 5rem;
+  }
+}

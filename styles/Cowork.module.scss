@@ -1,0 +1,207 @@
+@import "variables";
+@import "mixins";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  margin-top: -1rem;
+  grid-row: row-start;
+  grid-column: 1;
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+
+  nav {
+    margin-top: 0px;
+    padding-top: 1rem;
+    background: none;
+
+    a img[alt="4m Logo"]{
+      width: 217px !important;
+      height: 50px !important;
+      min-height: auto !important;
+    }
+  }
+
+  a,
+  button {
+    color: white;
+  }
+
+  svg,
+  path {
+    fill: white;
+  }
+
+  span {
+    border-color: white;
+  }
+
+  @media (min-width: $screen-medium) {
+    margin-top: -1rem;
+    grid-column: col-start / span 12;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  height: 356px;
+  grid-row: row-start / span 3;
+  grid-column: 1;
+  padding-bottom: 1rem;
+
+  @media (min-width: $screen-medium) {
+    height: 1080px;
+    grid-column: col-start / span 12;
+    padding-bottom: 10rem;
+  }
+
+  h1,
+  p {
+    width: 90vw;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+
+    @media (min-width: $screen-medium) {
+      width: 42rem;
+    }
+  }
+
+  p {
+    margin-top: 0rem;
+
+    @media (min-width: $screen-medium) {
+      width: 30rem;
+    }
+  }
+
+  a {
+    @include white-button;
+    padding: 1rem 3.5rem;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.container {
+  grid-column: col-start/span 12;
+}
+
+.cardsContainer {
+  background-color: #202020;
+  padding-bottom: 6rem;
+  grid-column: col-start/span 12;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start/span 12;
+  }
+}
+
+.cardsRow {
+  flex-direction: column;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+
+  @media (min-width: $screen-medium) {
+    flex-direction: row;
+    margin-top: -6rem;
+  }
+}
+
+.resourceContainer {
+  background-color: #202020;
+  grid-column: col-start/span 12;
+  padding-bottom: 6rem;
+
+  .resourceHeader {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $screen-medium) {
+      flex-direction: row;
+      width: 80vw;
+
+      justify-content: flex-start;
+      align-items: self-end;
+    }
+
+    .titleContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 60%;
+
+      @media (min-width: $screen-medium) {
+        align-items: flex-start;
+      }
+    }
+
+    .headerButtonContainer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex: 1;
+      padding-bottom: 20px;
+
+      button {
+        background-color: transparent;
+        border: 2px solid white;
+        outline: none;
+        color: white;
+        padding: 18px 29px;
+        border-radius: 40px;
+        font-size: 14.22px;
+        line-height: 12.21px;
+      }
+    }
+  }
+
+  .resourceContent {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    margin-left: auto;
+    overflow-x: auto;
+  }
+}
+
+.footer {
+  grid-row: row-start 9;
+  grid-column: 1;
+  padding-top: 10vw;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+    padding-top: 5rem;
+  }
+}

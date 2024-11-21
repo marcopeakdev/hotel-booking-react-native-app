@@ -1,0 +1,59 @@
+@import "variables";
+
+.tabbarContainer {
+  width: 100vw;
+  padding: 1.5rem;
+  position: relative;
+  color: #202020;
+  margin-left: auto;
+  margin-right: auto;
+
+  .tabbarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+    .headerItem {
+      user-select: none;
+      cursor: pointer;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      .borderItem {
+        background: transparent;
+        width: 100%;
+        height: 5px;
+      }
+
+      h1 {
+        color: #595959;
+        font-weight: 400;
+        font-size: 14.22px;
+        line-height: 12px;
+
+        @media (min-width: $screen-medium) {
+          font-size: 23.04px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .selected {
+      .borderItem {
+        background: linear-gradient(89.9deg, rgba(1, 175, 143, 0) 0.71%, #01AF8F 14.9%, #9E81D2 79.17%, rgba(158, 129, 210, 0) 98.83%);
+        width: 100%;
+        height: 5px;
+      }
+
+      h1 {
+        color: #202020;
+      }
+    }
+  }
+
+  .tabbarContent {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

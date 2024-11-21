@@ -1,0 +1,34 @@
+@import "variables";
+
+.inputContainer {
+  border-radius: 10px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  .inputLabel{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #595959;
+    font-weight: 300;
+    font-size: 14.22px;
+    line-height: 16px;
+  }
+
+  .contentContainer{
+    background: linear-gradient(#9E81D2, #4D8FFB);
+    padding: 3px;
+    border-radius: 5px;
+
+    .input{
+      padding: 10px;
+      background: #E6E6E6;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
+  }
+}

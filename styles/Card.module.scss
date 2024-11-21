@@ -1,0 +1,68 @@
+@import "variables";
+
+.card {
+  background: $m-dark-gray;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 90vw;
+  padding: 1.5rem;
+  position: relative;
+  @media (min-width: $screen-medium) {
+    width: 33rem;
+    @media (max-width: 1248px) {
+      width: 25rem;
+    }
+  }
+
+  &:nth-child(even) {
+    @media (min-width: $screen-medium) {
+      top: 6rem;
+    }
+  }
+
+  &:nth-child(odd) {
+    @media (min-width: $screen-medium) {
+      justify-self: end;
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    
+    path {
+      fill: $m-white;
+    }
+
+    svg {
+      display: none;
+      @media (min-width: $screen-medium) {
+        display: inline;
+      }
+    }
+  }
+
+  .description {
+    text-align: left;
+    padding-bottom: 2rem;
+  }
+
+  .link {
+    color: $m-purple;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    path {
+      fill: $m-purple;
+    }
+    
+    svg {
+      @media (min-width: $screen-medium) {
+        display: none;
+      }
+    }
+  }
+}

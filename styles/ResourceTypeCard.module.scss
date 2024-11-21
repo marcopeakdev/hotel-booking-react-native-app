@@ -1,0 +1,45 @@
+@import "variables";
+
+.card {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .imageBorderContainer {
+    padding: 5px;
+    background-color: white;
+    border-radius: 50%;
+
+    .contentContainer{
+      background-color: white;
+      padding: 5px;
+      border-radius: 50%;
+
+      .imageContainer {
+        position: relative;
+        width: 176px;
+        border-radius: 50%;
+        overflow: hidden;
+        height: 176px;
+      }
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #595959;
+
+    h3 {
+      font-size: 36px;
+      line-height: 30.99px;
+      font-weight: 600;
+    }
+  }
+}

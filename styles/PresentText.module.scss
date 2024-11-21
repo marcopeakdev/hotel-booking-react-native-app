@@ -1,0 +1,52 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  position: relative;
+
+  &.align-center {
+    align-items: center;
+    padding-bottom: 15rem;
+    padding-top: 15rem;
+
+    h1, p, h2 {
+      text-align: center;
+      width: 75%;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+  }
+
+  &.align-left {
+    align-items: flex-start;
+    padding: 10vw 0 20vw 20vw;
+
+    h1, p {
+      width: 45%;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+
+  a {
+    @include purple-button
+  }
+
+  .bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+}

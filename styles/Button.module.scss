@@ -1,0 +1,27 @@
+@import "variables";
+
+.button {
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 44px;
+  text-align: center;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  border: 0;
+  background: $m-purple;
+  color: white;
+  transition: all ease 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($m-purple, 5%);
+  }
+
+  &:disabled {
+    background: $m-light-gray;
+    color: black;
+    cursor: not-allowed;
+    &:hover {
+      background-color: $m-light-gray;
+    }
+  }
+}

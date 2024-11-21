@@ -1,0 +1,300 @@
+@import "variables";
+@import "mixins";
+
+.landing {
+  display: grid;
+  position: absolute;
+  width: 100%;
+
+  .header {
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+
+    nav {
+      margin-top: 0px;
+      padding-top: 1rem;
+      background: none;
+
+      a img {
+        width: 12.25rem !important;
+        height: 4.06rem !important;
+      }
+    }
+
+    a,
+    button {
+      color: black;
+    }
+
+    svg,
+    path {
+      fill: black;
+    }
+
+    span {
+      border-color: black;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.rowReverse {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $screen-medium) {
+    flex-direction: row-reverse;
+  }
+}
+
+.priceRow {
+  width: 100%;
+  padding: 0.625rem;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width: $screen-medium) {
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+  }
+
+  div{
+    margin-top: 1rem;
+  }
+
+  button{
+    margin-top: 4rem!important;
+
+    @media (min-width: $screen-medium) {
+      margin-top: 0.5rem!important;
+    }
+  }
+}
+
+.mobileImageContainer {
+  display: block;
+  height: 18.5rem;
+
+  @media (min-width: $screen-medium) {
+    display: none;
+  }
+}
+
+.optionItemContainer{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 46.5rem;
+  z-index: 2;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.optionItemStyle{
+  width: 50%;
+  flex-grow: 1;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+
+  @media (min-width: $screen-medium) {
+    width: 33%;
+  }
+}
+
+.logoRight {
+  position: absolute;
+  width: 45rem;
+  height: 55rem;
+  right: -9rem;
+  bottom: -9.7rem;
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: block;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.optionContainer {
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+
+  .optionImageContainer{
+    position: relative;
+    width: 1.875rem;
+    height: 2.75rem;
+    margin-bottom: 0.625rem;
+  }
+}
+
+.listView {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  overflow-y: auto;
+  height: 85.94rem;
+}
+
+.mapView {
+  display: flex;
+  height: 18.44;
+
+  @media (min-width: $screen-medium) {
+    flex: 1;
+    height: 85.94rem;
+  }
+
+}
+
+.bgContainer {
+  grid-row: row-start / span 3;
+  grid-column: 1;
+  color: black;
+  height: 22.25rem;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+    height: 53.75rem;
+  }
+
+  h1,
+  p {
+    color: black;
+  }
+}
+
+.listingBgContainer {
+  grid-row: row-start / span 3;
+  grid-column: 1;
+  color: black;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+
+  h1,
+  p {
+    color: black;
+  }
+}
+
+.listingBgContent {
+  margin-top: 15.625rem !important;
+  margin-bottom: 3.125rem !important;
+}
+
+.imageContainer {
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+.descriptionContainer {
+  width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 1.875rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: #595959;
+    text-align: left;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.circlePin {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: rgba(27, 168, 254, 0.2);
+  border: 2px solid rgb(27, 168, 254);
+}
+
+.subContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 15.56rem;
+  background-color: #01AF8F;
+  position: relative;
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: block;
+  }
+
+
+  .subContentContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    margin-left: auto;
+  }
+
+  button {
+    @include purple-button;
+    margin-top: 0.5rem;
+  }
+}
+
+.shoutout {
+  display: flex;
+  margin-bottom: -12rem;
+  grid-column: 1;
+  @media (min-width: $screen-large) {
+    margin-top: -4rem;
+    display: none!important;
+  }
+
+  grid-row: row-start 9;
+  grid-column: 1;
+  justify-self: center;
+  align-self: start;
+  z-index: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start 3 / col-start 11;
+    display: none!important;
+  }
+}
+
+.footer {
+  grid-row: row-start 9;
+  grid-column: 1;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}

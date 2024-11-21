@@ -1,0 +1,484 @@
+@import "variables";
+@import "mixins";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#back_link img{
+  width: 3rem !important;
+  height: 3.06rem !important;
+}
+
+.nav {
+  margin-top: -1rem;
+  grid-row: row-start;
+  grid-column: 1;
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  padding-left: 2rem;
+  width: 100vw;
+
+  nav {
+    margin-top: 0px;
+    padding-top: 1rem;
+    background: none;
+
+    a img[alt="4m Logo"]{
+      width: 217px !important;
+      height: 50px !important;
+      min-height: auto !important;
+    }
+  }
+
+  a,
+  button {
+    color: black;
+  }
+
+  svg,
+  path {
+    fill: black!important;
+  }
+
+  span {
+    border-color: black!important;
+  }
+
+  @media (min-width: $screen-medium) {
+    margin-top: -1rem;
+    grid-column: col-start / span 12;
+  }
+}
+
+.headerContainer {
+  background-color: white;
+  grid-column: col-start/span 12;
+  padding-bottom: 10px;
+  grid-row: row-start/span 3;
+  color: #202020;
+  height: 850px;
+
+  .headerContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .contentPart {
+      width: 80vw;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 12rem;
+
+      @media (min-width: $screen-medium) {
+        margin-top: 6rem;
+      }
+
+      .headerPart {
+        z-index: 1;
+        position: relative;
+        width: 85vw;
+
+        @media (min-width: $screen-medium) {
+          width: 40vw;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+          text-align: left;
+
+          @media (min-width: $screen-medium) {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      .priceContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        margin-top: 2rem;
+
+        @media (min-width: $screen-medium) {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .buttonContainer {
+          display: flex;
+          flex: 1;
+          margin-top: 4rem;
+
+          @media (min-width: $screen-medium) {
+            margin-top: 0rem;
+          }
+
+          button {
+            width: 80vw;
+
+            @media (min-width: $screen-medium) {
+              width: auto;
+            }
+          }
+        }
+      }
+
+      span {
+        font-size: 23.04px;
+        line-height: 19.79px;
+        font-weight: 400;
+        margin-right: 10px;
+      }
+
+      button {
+        gap: 1rem;
+        @include purple-button;
+        outline: none;
+        border: none;
+      }
+
+      .headerIconContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: 62px;
+
+        .headerIcon {
+          position: relative;
+          width: 54px;
+          height: 54px;
+        }
+      }
+    }
+
+    .headerImageContainer {
+      z-index: 0;
+      position: absolute;
+      width: 1133px;
+      height: 934px;
+      right: 0px;
+      top: 0px;
+      border-bottom-left-radius: 100%;
+      overflow: hidden;
+      opacity: 0.2;
+    }
+  }
+}
+
+.imageContainer {
+  grid-column: col-start/span 12;
+  height: 900px;
+  grid-template-areas:
+    'firstImage';
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: grid;
+  }
+
+  .firstImage {
+    position: relative;
+  }
+
+  .lastImage {
+    grid-area: lastImage;
+    position: relative;
+  }
+}
+
+.descriptionContainer {
+  grid-column: col-start/span 12;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  color: #202020;
+
+  .descriptionContentContainer {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    h1 {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 21px;
+      text-align: left;
+
+      @media (min-width: $screen-medium) {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 34px;
+      }
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 14.22px;
+      line-height: 12px;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      text-align: left;
+
+      @media (min-width: $screen-medium) {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        text-transform: uppercase;
+        margin-top: 1rem;
+      }
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 14.22px;
+      line-height: 12px;
+      text-align: left;
+    }
+  }
+}
+
+.subContainer {
+  grid-column: col-start/span 12;
+  background-color: #01AF8F;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: block;
+  }
+
+  .subContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    button {
+      gap: 1rem;
+      @include purple-button;
+      outline: none;
+      border: none;
+    }
+  }
+}
+
+.fixedBottomHeader {
+  display: flex;
+  flex-direction: row;
+  grid-column: col-start/span 12;
+  color: #202020;
+  position: fixed;
+  background: white;
+  width: 100%;
+  bottom: 0px;
+  z-index: 10;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.09);
+
+  .titleContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .contentContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    button {
+      gap: 1rem;
+      @include purple-button;
+      display: flex;
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+      margin-left: 40px;
+      margin-right: 40px;
+      align-items: center;
+    }
+
+    span {
+      font-size: 23.04px;
+      line-height: 19.79px;
+      font-weight: 400;
+      margin-right: 10px;
+    }
+  }
+
+  .priceContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+
+    @media (min-width: $screen-medium) {
+      align-items: center;
+    }
+  }
+}
+
+.scheduleContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 11;
+  color: #202020;
+  top: 0px;
+  left: 0px;
+
+  .scheduleContentContainer {
+    max-width: 715px;
+    min-width: 350px;
+    height: 100%;
+    background-color: #fff;
+    margin-left: auto;
+    box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.12);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    .scheduleHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid #E6E6E6;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      h2 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 21px;
+
+        @media (min-width: $screen-medium) {
+          font-size: 40px;
+          line-height: 34px;
+        }
+      }
+
+      p {
+        text-align: right;
+        text-transform: uppercase;
+        color: #E48600;
+        font-weight: 500;
+        font-size: 14.22px;
+        line-height: 12px;
+
+        @media (min-width: $screen-medium) {
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .scheduleContent {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      .timeSelectionContainer {
+        margin-top: 10px;
+        color: #202020;
+
+        .timeSelectionHeader {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    .scheduleFooter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      flex-direction: column;
+
+      @media (min-width: $screen-medium) {
+        flex-direction: row;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 14.22px;
+        line-height: 12px;
+        text-align: center;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      button {
+        gap: 1rem;
+        @include purple-button;
+        width: 218px;
+        margin-top: 2rem;
+
+        @media (min-width: $screen-medium) {
+          margin-top: 0rem;
+        }
+      }
+    }
+  }
+}
+
+.mobileImageContainer {
+  display: block;
+
+  @media (min-width: $screen-medium) {
+    display: none;
+  }
+}
+
+.shoutout {
+  margin-top: -2rem;
+  grid-column: 1;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $screen-large) {
+    margin-top: -4rem;
+  }
+
+  grid-row: row-start 9;
+  grid-column: 1;
+  justify-self: center;
+  align-self: start;
+  z-index: 2;
+  margin-bottom: -12rem;
+  position: relative;
+
+  @media (min-width: $screen-medium) {
+    display: none !important;
+  }
+}
+
+.footer {
+  grid-row: row-start 9;
+  grid-column: 1;
+  padding-top: 40vw;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+    padding-top: 5rem;
+    padding-bottom: 12rem;
+  }
+}

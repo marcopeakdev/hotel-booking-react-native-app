@@ -1,0 +1,74 @@
+@import "variables";
+@import "mixins";
+
+.mini-gallery {
+  display: grid;
+  margin-bottom: 3rem;
+  place-items: center;
+  @media (min-width: $screen-medium) {
+    grid-template-columns: 1.15fr 1fr;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
+  }
+ 
+  .left {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    place-items: center;
+    @media (min-width: $screen-medium) {
+      margin-left: 5rem;
+      display: inline-grid;
+      grid-template-rows: auto auto auto;
+      grid-template-columns: 1fr 1fr;
+      place-items: stretch;
+    }
+  }
+
+  .right {
+    order: -1;
+    margin-left: 5rem;
+    @media (min-width: $screen-medium) {
+      order: 1;
+    }
+  }
+
+  h1 {
+    color: $m-medium-gray;
+    margin-bottom: 0;
+    @media (min-width: $screen-medium) {
+      grid-row: 1;
+      grid-column: 1 / span 2;
+    }
+  }
+
+  p {
+    color: $m-medium-gray;
+    max-width: 90%;
+    @media (min-width: $screen-medium) {
+      grid-row: 2;
+      grid-column: 1 / span 2;
+    }
+  }
+
+  a {
+    min-width: 70%;
+    @media (min-width: $screen-medium) {
+      place-self: stretch;
+      min-width: 0;
+    }
+
+    &.left-link {
+      @include purple-button;
+      grid-row: 3;
+      grid-column: 1;
+    }
+
+    &.right-link {
+      @include white-button;
+      grid-row: 3;
+      grid-column: 2;
+    }
+  }
+}
+

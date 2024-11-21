@@ -1,0 +1,76 @@
+@import "variables";
+@import "mixins";
+
+// The grid-area is defined in the NavBar component.
+
+.dropdown-section {
+  grid-area: dropdown;
+  @media (min-width: $screen-medium) {
+    min-width: 20rem;
+  }
+
+  .dropdown-border {
+    width: 100%;
+    padding: 0.5rem;
+    @include purple-nav-border;
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: $m-white;
+    grid-row: 1;
+  }
+
+  .selected-link {
+    display: none;
+    @media (min-width: $screen-medium) {
+      display: inline-block;
+      min-width: 10rem;
+      border-bottom: 1px solid $m-white;
+      margin-left: 0.5em;
+      color: $m-green;
+    }
+  }
+
+  .dropdown-arrow-show {
+    padding-left: 1rem;
+  }
+
+  .dropdown-arrow-noshow {
+    padding-left: 1rem;
+    img {
+      transform: rotate(180deg);
+      transform-origin: center center;
+    }
+  }
+
+  .dropdown-links {
+    list-style: none;
+    grid-row: 2 / 3;
+  }
+
+  a {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    text-align: left;
+    gap: 0.5rem;
+    padding: 0.1rem;
+    align-items: center;
+    color: inherit; 
+
+    &:hover {
+      color: $m-green;
+    }
+
+    path {
+      fill: $m-white;
+    }
+
+    &.hovering path {
+      fill: $m-green;
+    }
+  }
+}

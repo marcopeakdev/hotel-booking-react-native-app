@@ -1,0 +1,184 @@
+@import "variables";
+@import "mixins";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  margin-top: -1rem;
+  grid-row: row-start;
+  grid-column: 1;
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+
+  nav {
+    margin-top: 0px;
+    padding-top: 1rem;
+    background: none;
+
+    a img[alt="4m Logo"]{
+      width: 217px !important;
+      height: 50px !important;
+      min-height: auto !important;
+    }
+  }
+
+  a,
+  button {
+    color: black;
+  }
+
+  svg,
+  path {
+    fill: black;
+  }
+
+  span {
+    border-color: black!important;
+  }
+
+  @media (min-width: $screen-medium) {
+    margin-top: -1rem;
+    grid-column: col-start / span 12;
+  }
+}
+
+.bannerContainer {
+  background-color: $m-green;
+  grid-column: col-start/span 12;
+  padding-bottom: 10px;
+  min-height: 416px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 36px;
+    line-height: 31px;
+
+    @media (min-width: $screen-medium) {
+      font-size: 48px;
+      line-height: 41px;
+    }
+  }
+
+  .productName {
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 28px;
+
+    @media (min-width: $screen-medium) {
+      font-size: 23.04px;
+      line-height: 20px;
+    }
+  }
+
+  .descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    p {
+      font-weight: 500;
+      font-size: 14.22px;
+      line-height: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  grid-column: col-start/span 12;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2rem;
+  @media (min-width: $screen-medium) {
+    flex-direction: row;
+  }
+
+  .labelText {
+    color: #595959;
+    font-weight: 500;
+    font-size: 14.22px;
+    line-height: 12px;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-medium) {
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  .directionBtn{
+    width: 100%;
+    display: block;
+    text-align: right;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 14.22px;
+    line-height: 14px;
+    color: #595959;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  a {
+    color: $m-blue;
+    font-weight: 300;
+    font-size: 14.22px;
+    line-height: 12px;
+    margin-top: 6px;
+  }
+}
+
+.values {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+
+  @media (min-width: $screen-medium) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5px;
+  }
+}
+
+.footer {
+  grid-row: row-start 9;
+  grid-column: 1;
+  padding-top: 10vw;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+    padding-top: 5rem;
+  }
+}

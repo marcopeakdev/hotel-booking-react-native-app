@@ -1,0 +1,21 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.menu {
+  color: $m-black;
+  .foodlines {
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+    button {
+      flex: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

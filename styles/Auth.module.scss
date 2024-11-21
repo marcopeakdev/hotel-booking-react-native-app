@@ -1,0 +1,77 @@
+@import "variables";
+
+.authWrapper {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  height: 100vh;
+  background: $m-black;
+
+  > div {
+    width: 100%;
+    position: relative;
+
+    &:first-of-type {
+      align-self: center;
+      padding: 0 75px;
+      width: 50%;
+    }
+  }
+
+  h1 {
+    color: white;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  .authError {
+    padding: 8px 15px;
+    background-color: red;
+    color: white;
+    margin-bottom: 40px;
+  }
+
+  .forgotLink {
+    text-align: right;
+    margin-bottom: 20px;
+
+    a {
+      color: $m-orange;
+    }
+  }
+
+  button {
+    margin-bottom: 40px;
+  }
+
+  .verification {
+    p {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      line-height: 0.5rem;
+
+      &.passed {
+        font-weight: bold;
+        color: $m-green;
+      }
+
+      &:last-of-type {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  p {
+    color: white;
+  }
+
+  a {
+    color: $m-green;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}

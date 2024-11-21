@@ -1,0 +1,85 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @media (min-width: $screen-medium) {
+    flex-direction: row;
+    border-bottom: 1px solid #E6E6E6;
+  }
+
+  .contentContainer{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 10px;
+    width: 100%;
+
+    @media (min-width: $screen-medium) {
+      width: 30rem;
+    }
+  }
+
+  h1 {
+    color: #595959;
+    font-size: 14.22px;
+    line-height: 12.21px;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    font-weight: 500;
+    
+    @media (min-width: $screen-medium) {
+      font-size: 23.04px;
+      line-height: 19.79px;
+    }
+  }
+
+  p {
+    color: #595959;
+    font-size: 14.22px;
+    line-height: 15.04px;
+    margin-top: 0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    max-height: 30.08px;
+    text-align: left;
+    font-weight: 300;
+
+    @media (min-width: $screen-medium) {
+      max-height: 63px;
+      line-height: 21px;
+    }
+  }
+
+  .priceContainer{
+    color: #595959;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 11.375rem;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+
+    @media (min-width: $screen-medium) {
+      width: 17.44rem;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "variables";
+
+.input {
+  margin-bottom: 20px;
+  label {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  input {
+    border-radius: 5px;
+    border-color: none;
+    border-bottom: none;
+    border-right: none;
+    padding: 15px 12px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,118 @@
+@import "variables";
+
+.calendar {
+  position: relative;
+  color: #202020;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .monthPicker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      font-weight: 600;
+      font-size: 20.25px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      margin-top: 2rem;
+
+      @media (min-width: $screen-medium) {
+        font-size: 23.04px;
+        line-height: 28px;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .selectedDateText {
+      display: none;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex: 1;
+
+      @media (min-width: $screen-medium) {
+        display: flex;
+      }
+    }
+
+    path {
+      fill: $m-white;
+    }
+
+    svg {
+      display: none;
+
+      @media (min-width: $screen-medium) {
+        display: inline;
+      }
+    }
+  }
+
+  .calendarContent {
+    .calendarHeader {
+      display: grid;
+      grid-template-rows: 32px;
+      grid-template-columns: repeat(7, 1fr);
+
+      @media (min-width: $screen-medium) {
+        grid-template-rows: 74px;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        max-height: 74px;
+      }
+    }
+
+    .monthContent {
+      display: grid;
+      grid-template-rows: 32px 32px 32px 32px 32px 32px;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 1px;
+      border: 1px solid #202020;
+      background-color: #202020;
+
+      @media (min-width: $screen-medium) {
+        grid-template-rows: 74px 74px 74px 74px 74px 74px;
+      }
+
+      .dayContainer {
+        background: linear-gradient(225deg, #9E81D2, #4D8FFB);
+
+        div {
+          width: 100%;
+          height: 100%;
+          background: #fff;
+        }
+      }
+
+      .exceptDay {
+        color: #757575;
+      }
+
+      .selected {
+        color: #fff;
+        background: #202020 !important;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

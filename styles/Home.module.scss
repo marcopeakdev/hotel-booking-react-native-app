@@ -1,0 +1,92 @@
+@import "variables";
+@import "mixins";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, [row-start] 1fr) repeat(9, [row-start] auto);
+  @media (min-width: $screen-medium) {
+    grid-template-columns: repeat(12, [col-start] auto);
+  }
+}
+
+.nav {
+  grid-row: row-start;
+  grid-column: 1;
+  z-index: 1;
+  
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}
+
+.hero {
+  grid-row: row-start / span 3;
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}
+
+.intro {
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}
+
+.food {
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}
+
+.stays {
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}
+
+.tech {
+  grid-row: row-start 7;
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}
+
+.rides {
+  grid-row: row-start 8;
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}
+
+.shoutout {
+  margin-top: -6rem;
+  grid-column: 1;
+  @media (min-width: $screen-large) {
+    margin-top: -4rem;
+  }
+
+  grid-row: row-start 9;
+  grid-column: 1;
+  justify-self: center;
+  align-self: start;
+  z-index: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start 3 / col-start 11;
+  }
+}
+
+.footer {
+  grid-row: row-start 9;
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}

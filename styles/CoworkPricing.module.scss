@@ -1,0 +1,209 @@
+@import "variables";
+@import "mixins";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  margin-top: -1rem;
+  grid-row: row-start;
+  grid-column: 1;
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  padding-left: 2rem;
+  width: 100%;
+
+  .selected-link{
+    border-bottom: 1px solid black;
+  }
+
+  nav {
+    margin-top: 0px;
+    padding-top: 1rem;
+    background: none;
+
+    a img[alt="4m Logo"]{
+      width: 217px !important;
+      height: 50px !important;
+      min-height: auto !important;
+    }
+  }
+
+  a,
+  button {
+    color: black;
+  }
+
+  svg,
+  path {
+    fill: black;
+  }
+
+  span {
+    border-color: black!important;
+  }
+
+  @media (min-width: $screen-medium) {
+    margin-top: -1rem;
+    grid-column: col-start / span 12;
+  }
+}
+
+.container {
+  margin-top: 5rem;
+}
+
+.headerContainer {
+  background-color: white;
+  grid-column: col-start/span 12;
+  padding-bottom: 10px;
+
+  h2 {
+    color: #202020;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 24px;
+    line-height: 21px;
+
+    @media (min-width: $screen-medium) {
+      font-size: 64px;
+      line-height: 55px;
+    }
+  }
+}
+
+.modalHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #FD8D3E;
+  padding-top: 34.5px;
+  padding-bottom: 30px;
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 14.22px;
+    line-height: 12px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+}
+
+.cardsRow {
+  flex-direction: row;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+
+  @media (min-width: $screen-medium) {
+    display: flex;
+  }
+}
+
+.mobileCardsRow {
+  display: block;
+
+  @media (min-width: $screen-medium) {
+    display: none;
+  }
+}
+
+.resourceContainer {
+  background-color: white;
+  grid-column: col-start/span 12;
+  padding-bottom: 6rem;
+
+  .resourceContent {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.dotContainer {
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 3px;
+
+  .dotStyle {
+    border-radius: 5px;
+  }
+}
+
+
+.mobileFooter {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $screen-medium) {
+    display: none
+  }
+
+  a {
+    background-color: $m-purple;
+    padding: 14px 27.5px;
+    color: #202020;
+    border-radius: 40px;
+    margin: 10px;
+    min-width: 100px;
+    display: block;
+    text-align: center;
+  }
+
+  .outlineButton {
+    background-color: $m-white;
+    padding: 14px 27.5px;
+    color: #202020;
+    border-radius: 40px;
+    margin: 10px;
+    min-width: 100px;
+    display: block;
+    text-align: center;
+    border: 2px solid #202020;
+  }
+}
+
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width: $screen-medium) {
+    flex-direction: row;
+  }
+
+  button {
+    margin-top: 2rem;
+
+    @media (min-width: $screen-medium) {
+      margin-top: 0px;
+    }
+  }
+}
+
+.footer {
+  grid-row: row-start 9;
+  grid-column: 1;
+  padding-top: 10vw;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+    padding-top: 5rem;
+  }
+}

@@ -1,0 +1,40 @@
+@import "variables";
+
+.timepicker {
+  position: relative;
+  color: #202020;
+  overflow-x: auto;
+
+  .pickerContent {
+    display: grid;
+    grid-template-columns: repeat(70px);
+    grid-auto-flow: column;
+
+    .timeContainer {
+      cursor: pointer;
+      background: linear-gradient(225deg, #9E81D2, #4D8FFB);
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 70px;
+        height: 72px;
+        background: #fff;
+
+        p {
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+      }
+
+      .selected{
+        width: 64px;
+        height: 66px;
+        background: #202020;
+        color: white;
+      }
+    }
+  }
+}

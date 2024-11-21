@@ -1,0 +1,145 @@
+@import "variables";
+@import "mixins";
+
+.landing {
+  position: relative;
+  display: grid;
+
+  .header {
+    display: flex;
+    align-items: center;
+    @media (min-width: $screen-medium) {
+      padding-left: 2rem;
+    }
+  }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    color: $m-blue;
+    font-size: 1rem;
+    margin-left: 2rem; 
+
+    .back-text {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .hero-wrapper {
+    display: none;
+    @media (min-width: $screen-medium) {
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+   }
+
+  .hero {
+    position: absolute;
+    /*bottom: -10vh;
+    right: -50vw;*/
+    bottom: -5rem;
+    right: -45rem;
+  }
+
+  .main-body {
+    color: $m-black;
+    
+    @media (min-width: $screen-medium) {
+      margin-left: 2rem;
+      margin-top: 2.5rem;
+      width: 35vw;
+    }
+
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    path {
+      fill: $m-green;
+    }
+
+    h1 {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+
+      .dine-in, .pick-up {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: $m-white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border: none;
+        flex: 1;
+
+        &.clicked {
+          background: $m-light-gray;
+          box-shadow: none;
+        }
+      }
+    }
+    
+    .order-type, .button-text {
+      font-size: 1.2rem;
+    }
+
+    .button-text {
+      margin-top: 0.5rem;
+    }
+  }
+ 
+  .bottom {
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 0.5rem 0.5rem;
+    color: $m-medium-gray;
+    background: $m-white;
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.09);
+    width: 100%;
+    
+    @media (min-width: $screen-medium) {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+      height: 6rem;
+    }
+
+    label {
+      display: block;
+    }
+
+    input, select {
+      @include input-styles;
+      &[type="button"] {
+        background: $m-medium-gray;
+        box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 44px;
+        color: $m-white;
+        width: 10rem;
+      }
+    }
+
+    select {
+      min-width: 20rem;
+    }
+  } 
+}

@@ -1,0 +1,32 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.header {
+  color: $m-black;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 2rem 5rem 0 0;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    background-color: $m-white;
+    border: none;
+  }
+
+  .dining-option {
+    display: flex;
+    flex-flow: column;
+
+    span:nth-child(2) {
+      font-weight: bold;
+      color: $m-blue;
+    }
+  }
+}

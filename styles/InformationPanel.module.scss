@@ -1,0 +1,58 @@
+@import "variables";
+
+.card {
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #202020;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ABABAB;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    h3 {
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      font-size: 14.22px;
+      line-height: 12px;
+
+      @media (min-width: $screen-medium) {
+        font-size: 23.04px;
+        line-height: 20px;
+      }
+    }
+
+    a {
+      color: #4D8FFB;
+    }
+
+    path {
+      fill: $m-white;
+    }
+
+    svg {
+      display: none;
+
+      @media (min-width: $screen-medium) {
+        display: inline;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}

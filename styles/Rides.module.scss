@@ -1,0 +1,121 @@
+@import "variables";
+@import "mixins";
+
+.landing {
+  display: grid;
+  position: absolute;
+  width: 100%;
+
+  .header {
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+
+    nav {
+      margin-top: 0px;
+      padding-top: 1rem;
+      background: none;
+
+      a img {
+        width: 12.75rem !important;
+        height: 2.875rem !important;
+      }
+    }
+
+    a,
+    button {
+      color: black;
+    }
+
+    svg,
+    path {
+      fill: black;
+    }
+
+    span {
+      border-color: black;
+    }
+
+
+  }
+}
+
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $screen-medium) {
+    flex-direction: row;
+  }
+}
+
+.appstore{
+  position: relative;
+  width: 11.125rem!important;
+  max-width: 11.125rem!important;
+  min-width: 11.125rem!important;
+  min-height: auto!important;
+  height: 3.625rem!important;
+}
+
+.playstore{
+  position: relative;
+  width: 13.375rem!important;
+  max-width: 13.375rem!important;
+  min-width: 13.375rem!important;
+  min-height: auto!important;
+  height: 4.875rem!important;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.listView{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  overflow-y: auto;
+  height: 85.94rem;
+}
+
+.mapView{
+  display: flex;
+  flex: 1;
+  height: 85.94rem;
+}
+
+.bgContainer {
+  grid-row: row-start / span 3;
+  grid-column: 1;
+  color: black;
+  height: 22.25rem;
+
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+    height: 53.75rem;
+  }
+
+  h1,
+  p {
+    color: black;
+  }
+}
+.footer {
+  grid-row: row-start 9;
+  grid-column: 1;
+  @media (min-width: $screen-medium) {
+    grid-column: col-start / span 12;
+  }
+}

@@ -1,0 +1,73 @@
+/* I'm not sure what else this will be used for yet! */
+@import "variables";
+
+@mixin purple-nav-border {
+  border: 3px solid $m-purple;
+  border-radius: 30px;
+}
+
+@mixin input-styles {
+    outline: none;
+    background: $m-light-gray;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    color: $m-black;
+    height: 3rem;
+
+    &:not([type="button"]) {
+      border: 3px solid $m-purple;
+      &:focus {
+        border: 3px solid $m-green;
+      }
+    }
+}
+
+@mixin purple-button {
+  background: $m-purple;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 44px;
+  color: $m-black;
+  text-align: center;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  &:hover {
+    background-color: #b99af1;
+  }
+
+  &:disabled{
+    background-color: grey;
+  }
+}
+
+@mixin white-button {
+  background: $m-white;
+  border: 2px solid $m-black;
+  border-radius: 48px;
+  color: $m-black;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+}
+
+@mixin outline-button {
+  background: $m-white;
+  border: 2px solid $m-black;
+  border-radius: 48px;
+  color: $m-black;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  min-width: 100px;
+
+  &:hover {
+    background-color: #ececed;
+  }
+
+  &:disabled{
+    background-color: grey;
+  }
+}

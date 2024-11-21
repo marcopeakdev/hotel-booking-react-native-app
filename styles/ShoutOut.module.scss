@@ -1,0 +1,42 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  background: $m-green;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 1rem;
+  width: 90vw;
+  
+  @media (min-width: $screen-medium) {
+    width: auto;
+    flex-flow: row nowrap;
+    gap: 0;
+  }
+
+  p {
+    margin: 0;
+
+    &.top-text {
+      font-size: 2rem;
+    }
+  }
+
+  h1, p {
+    @media (min-width: $screen-medium) {
+      text-align: left;
+    }
+  }
+
+  .left-button {
+    @include purple-button;
+  }
+
+  .right-button {
+    @include white-button;
+  }
+}
