@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [[ $CI_COMMIT_BRANCH == "develop" ]]
+then
+    # TODO: uncomment line below and change 2 lines below to use >>
+    # echo "ENVIRONMENT=staging" > .env
+    echo "STAGING_PASSWORD=$STAGING_PASSWORD" > .env
+    echo "NPM_TOKEN=$NPM_TOKEN" >> .env
+    echo "NEXT_PUBLIC_BACKEND_API_URL=$BACKEND_API_URL" >> .env
+    echo "NEXT_PUBLIC_BACKEND_API_TOKEN=$BACKEND_API_TOKEN" >> .env
+    echo "NEXT_PUBLIC_BACKEND_API_GUESTY_BASE=$BACKEND_API_GUESTY_BASE" >> .env
+    echo "NEXT_PUBLIC_BACKEND_API_CONTENTFUL_BASE=$BACKEND_API_CONTENTFUL_BASE" >> .env
+    echo "NEXT_PUBLIC_BACKEND_API_TOAST_BASE=$BACKEND_API_TOAST_BASE" >> .env
+    echo "NEXT_PUBLIC_BACKEND_API_SPREEDLY_BASE=$BACKEND_API_SPREEDLY_BASE" >> .env
+    echo "NEXT_PUBLIC_BACKEND_API_NEXUDUS_BASE=$BACKEND_API_NEXUDUS_BASE" >> .env
+    echo "PORT=" >> .env
+fi

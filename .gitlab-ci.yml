@@ -1,0 +1,131 @@
+image: nikolaik/python-nodejs:latest
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .yarn/
+    - .next/cache/
+
+variables:
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+  AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+  AWS_AMPLIFY_PROJECT_NAME: $AWS_AMPLIFY_PROJECT_NAME
+  AWS_AMPLIFY_APPID: $AWS_AMPLIFY_APPID
+  AWS_AMPLIFY_ENV: $AWS_AMPLIFY_ENV
+  AMPLIFY_USERPOOL_ID: $AMPLIFY_USERPOOL_ID
+  STAGING_PASSWORD: $STAGING_PASSWORD
+  NPM_TOKEN: $NPM_TOKEN
+  BACKEND_API_DEV_URL: $BACKEND_API_DEV_URL
+  BACKEND_API_URL: $BACKEND_API_URL
+  BACKEND_API_DEV_TOKEN: $BACKEND_API_DEV_TOKEN
+  BACKEND_API_TOKEN: $BACKEND_API_TOKEN
+  BACKEND_API_GUESTY_BASE: $BACKEND_API_GUESTY_BASE
+  BACKEND_API_CONTENTFUL_BASE: $BACKEND_API_CONTENTFUL_BASE
+  BACKEND_API_TOAST_BASE: $BACKEND_API_TOAST_BASE
+  BACKEND_API_SPREEDLY_BASE: $BACKEND_API_SPREEDLY_BASE
+  BACKEND_API_NEXUDUS_BASE: $BACKEND_API_NEXUDUS_BASE
+
+stages:
+  - install
+  - build
+  - deploy_dev
+  - deploy_prod
+
+install:
+  stage: install
+  script:
+  - 'npm install --force -g node@16.17.0'
+  - 'rm -f package-lock.json'
+  - 'yarn config set sharp_binary_host "https://npmmirror.com/mirrors/sharp"'
+  - 'yarn config set sharp_libvips_binary_host "https://npmmirror.com/mirrors/sharp-libvips"'
+  - 'yarn install'
+
+build: 
+  stage: build
+  script:
+    - 'mv ci-aws-exports.js aws-exports.js'
+    - 'yarn run build'
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - .next
+
+deploy_dev:
+  stage: deploy_dev
+  dependencies:
+    - build
+    - install
+  environment:
+    name: development
+
+  image:
+    name: 'mjsarfatti/gitlab-ci-pipeline-php-aws:latest'
+    entrypoint: ['']
+  before_script:
+    - 'rm -rf aws'
+    - 'rm -f *.zip'
+    - 'sh ./setup_credentials.sh'
+  script:
+    - 'git checkout develop'
+    - 'sh ./setup_dev_env.sh'
+    - 'echo web: npm run docker:dev > ./Procfile'
+    - 'curl -sf https://gobinaries.com/tj/node-prune | sh'
+    - 'node-prune'
+    - 'zip -q -r ~/$DEV_BUNDLE_SRC ./ -x awscliv2.zip -x .next/cache/**\* .yarn/cache/**\* -x .git/**\*'
+    - 'aws s3 cp ~/$DEV_BUNDLE_SRC s3://$S3BUCKET/$DEV_BUNDLE_SRC --profile eb-cli'
+    - 'eb setenv NODE_ENV=development'
+    - 'eb setenv NPM_TOKEN=$NPM_TOKEN'
+    - 'eb deploy $AWS_EB_DEV_ENVIRONMENT'
+  after_script:
+    - 'npm run docker:dev'
+
+  when: on_success
+  environment: development
+  cache:
+    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
+    untracked: true
+    paths:
+        - .next/
+  only:
+    - develop
+
+deploy_prod:
+  stage: deploy_prod
+  dependencies:
+    - build
+    - install
+  environment:
+    name: production
+
+  image: 'mjsarfatti/gitlab-ci-pipeline-php-aws:latest'
+  before_script:
+    - 'rm -rf aws'
+    - 'rm -f *.zip'
+    - 'sh ./setup_credentials.sh'
+  dependencies:
+    - build
+  script:
+    - 'git checkout main'
+    - 'sh ./setup_prod_env.sh'
+    - 'echo web: npm run docker:start > ./Procfile'
+    - 'curl -sf https://gobinaries.com/tj/node-prune | sh'
+    - 'node-prune'
+    - 'zip -q -r ~/$PROD_BUNDLE_SRC ./ -x awscliv2.zip -x .next/cache/**\* .yarn/cache/**\* -x .git/**\*'
+    - 'aws s3 cp ~/$PROD_BUNDLE_SRC s3://$S3BUCKET/$PROD_BUNDLE_SRC --profile eb-cli'
+    - 'eb setenv NODE_ENV=production'
+    - 'eb setenv NPM_TOKEN=$NPM_TOKEN'
+    - 'eb deploy $AWS_EB_PROD_ENVIRONMENT'
+  after_script:
+    - 'npm run docker:start'
+
+  when: on_success
+  environment: production
+  cache:
+    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
+    untracked: true
+    paths:
+        - .next/
+  only:
+    - main

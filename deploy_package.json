@@ -1,0 +1,15 @@
+{
+  "name": "4m-ecommerce-app-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "docker:dev": "cp ./env.development ./.env && next dev",
+    "docker:start": "cp ./.env.production ./.env && next start",
+  },
+  "engines": {
+    "node": ">=14.18.0",
+    "npm": ">=6.14.0"
+  },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.19"
+}
