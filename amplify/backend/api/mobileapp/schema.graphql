@@ -1,0 +1,74 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY {
+  globalAuthRule: AuthRule = { allow: public }
+} # FOR TESTING ONLY!
+type Account @model {
+  id: ID!
+  name: String
+  phone: String
+  email: String!
+  points: Int
+}
+
+type Order @model {
+  orderId: String!
+  userId: String!
+  source: String!
+  points: Int!
+}
+
+type Point @model {
+  userId: String!
+  points: Int!
+}
+
+type Selection @model {
+  id: ID!
+  foodOrderId: ID!
+  itemGuid: String!
+  itemGroupGuid: String!
+  name: String!
+  price: Float!
+  quantity: Int!
+  modifiers: String
+}
+
+type Modifier @model {
+  id: String!
+  selectionId: ID!
+  modifierGuid: String!
+}
+
+type FoodOrder @model {
+  id: ID!
+  userName: String!
+  userEmail: String!
+  userPhone: String
+  userId: String!
+  tableGuid: String!
+  tableName: String
+  diningOptionGuid: String!
+  diningOptionName: String!
+  orderTime: String!
+  orderSubmitted: Boolean!
+  orderGuid: String
+  checkGuid: String
+  groupId: String!
+  inviteAccepted: Boolean!
+  singlePayee: Boolean!
+  readyToSubmit: Boolean!
+  selections: [Selection]
+}
+
+type Query {
+  listFoodOrderByGroupId(groupId: String!): [FoodOrder]
+}
+
+type Mutation {
+  deleteSelectionsById(ids: [ID]): [Selection]
+}
+
+input DeleteSelectionsByIdInput {
+  ids: [ID!]
+}

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "mobileapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\jason\\Documents\\Moonello\\Projects\\4m-venue-project\\4m-ecommerce-app\\amplify\\backend\\api\\mobileapp\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-04-11T19:42:13.282Z",
+      "keyDescription": "mobileapp api key"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}

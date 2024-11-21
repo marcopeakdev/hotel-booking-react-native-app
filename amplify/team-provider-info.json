@@ -1,0 +1,31 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mobileapp-staging-171341-authRole",
+      "UnauthRoleArn": "arn:aws:iam::107410131275:role/amplify-mobileapp-staging-171341-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::107410131275:role/amplify-mobileapp-staging-171341-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mobileapp-staging-171341-deployment",
+      "UnauthRoleName": "amplify-mobileapp-staging-171341-unauthRole",
+      "StackName": "amplify-mobileapp-staging-171341",
+      "StackId": "arn:aws:cloudformation:us-east-1:107410131275:stack/amplify-mobileapp-staging-171341/6ef8c090-a095-11ec-b616-0e4576644b0f",
+      "AmplifyAppId": "dt78daz52m71v"
+    },
+    "categories": {
+      "auth": {
+        "mobileapp": {
+          "userPoolId": "us-east-1_u6hkcAirZ",
+          "userPoolName": "4m-public",
+          "webClientId": "4ulkf0462uqd05ptdsqkp6fe97",
+          "nativeClientId": "4ulkf0462uqd05ptdsqkp6fe97"
+        }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dt78daz52m71v",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}
